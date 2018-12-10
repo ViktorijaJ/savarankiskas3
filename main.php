@@ -88,11 +88,13 @@ if (isset($_REQUEST["action"])) {
             $result = $obj->rikiuotiSUM();
             $obj->printAnyTable($result);
             break;
-        default:
-            $result = $obj->getAutoInfo();
-            $obj->printAnyTable($result);
     }
+};
+if (!isset($_REQUEST["action"])) {
+    $result = $obj->getAutoInfo();
+    $obj->printAnyTable($result);
 }
+
 ?>
 <br>
 <hr width="100%">
